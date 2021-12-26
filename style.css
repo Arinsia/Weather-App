@@ -1,0 +1,94 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{ /*สีพื้นหลัง*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: darkgrey;
+}
+.wrapper{ /*ตรงกรอบขาวๆตรงกลาง*/
+    width: 400px;
+    border-radius: 7px;
+    background: cornsilk;
+}
+.wrapper header{ /*ตรงหัวข้อ*/
+    color: rgb(85, 30, 156);
+    font-size: 22px;
+    font-weight: 500;
+    padding: 16px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(34, 35, 131);
+}
+header i{ /*ตรงลูกศร หน้าหัวข้อ*/
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 8px;
+}
+.wrapper .input-part{ /*ตำแหน่งข้อมูล เช่นพวก Please enter a valid city name ที่ให้ใส่ชื่อ ปุ่ม*/
+    display: none;
+    margin: 20px 25px 30px;
+}
+.input-part .info-txt{
+    display: none; /* เอา Please enter a valid city name ออก*/
+    font-size: 17px;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 200px;
+    margin-bottom: 15px; /*ประมาณว่าระยะห่างระว่า Please enter a valid city name กับ กล่อง ใส่ชื่อ */
+}
+.info-txt.error{
+    display: block; /* เอา Please enter a valid city name ออก*/
+    color: darkred;
+    background: cornsilk;
+    border: 1px solid cornsilk;
+}
+.info-txt.pending{
+    display: block; /* เอา Please enter a valid city name ออก*/
+    color: green;
+    background: cornsilk;
+    border: 1px solid cornsilk;
+}
+.input-part :where(input, button){ 
+    width: 100%; /*ช่องวางที่ให้ใส่ชื่อกับget location*/
+    height: 55px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 200px; /*ความโค้งของขอบ*/
+}
+.input-part input{
+    text-align: center;
+    border: 1px solid rgb(138, 133, 126);
+}
+.input-part input:is(:focus, :valid){
+    border: 2px solid rgb(214, 114, 214);
+}
+.input-part .separator{
+    height: 1px;
+    width: 100%;
+    margin: 25px 0;
+    background: rgb(138, 133, 126);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.separator::before{
+    content: "or";
+    color: rgb(138, 133, 126);
+    font-size: 19px;
+    padding: 0 15px;
+    background: cornsilk;
+}
+.input-part button{
+    color: whitesmoke;
+    cursor: pointer;
+    background: rgb(214, 114, 214);
+}
